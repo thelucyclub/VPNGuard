@@ -7,26 +7,27 @@ api-key: ""
 # Enable caching of API requests? If so specify time in hours to keep the cached file
 # When the api-cache-time is reached the cached file will be updated with the API server response.
 api-cache: true
-api-cache-time: 24
+api-cache-time: 1
 
 # Commands to run if player has connected with a anonymizer
 #command:
 #    - kick %p You seem to be using a VPN or Proxy
-command: []
+command:
+    - kick %p Disconnected from server with reason: Connection Throttled! Please slow down. (If this is a mistake, it may just come from you using VPN / Proxy)
 
 # Kick message to display if a user tries connecting with an IP that is subnet banned
 ban-message: "You are subnet banned!"
 
 # Timeout in seconds for connecting to the API server.
 # If it takes longer to connect the plugin will assume API server is down.
-timeout: 10
+timeout: 60
 
 # Console Logging, displays detailed information every time a player joins
 # the server on console.
 logging: true
 
 # Allow users to connect if API Server encounters any errors (Such as Timeout)?
-bypass-check: false
+bypass-check: true
 
 # Kick message to display if bypass-check is on false.
-bypass-message: "Unable to perform anonymization checks."
+bypass-message: "Client error #3342: Mojang authentication problem"
